@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa Reveal</title>
+    <style>
+        .loading {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">Loading...</div>
+    <script>
+        setTimeout(function() {
+            document.querySelector('.loading').style.display = 'none';
+            document.body.innerHTML = '<h1>Your Secret Santa is: ' + window.location.search.substring(1) + '</h1>';
+        }, 2000);
+    </script>
+</body>
+</html>
